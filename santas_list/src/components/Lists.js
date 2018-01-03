@@ -44,7 +44,6 @@ class Lists extends React.Component {
     	return (
 			<div key={key}>
 	            <h3>Santa's List for: <input type="text" name="giftee" value={giftList.giftee} placeholder="Name" onChange={(e) => this.handleChange(e, null, key)}/></h3>
-	            {/* <h4>Budget: <input type="text" name="budget" value={giftList.budget} placeholder="Name" onChange={(e) => this.handleChange(e, null, key)}/></h4> */}
 	            <h4>Total Spent: {formatPrice(giftList.remaining)}</h4>
 	            {giftKeys.map(callback, {
 	            	key: key
@@ -65,8 +64,7 @@ class Lists extends React.Component {
                     <option value="available">In Stock!</option>
                     <option value="unavailable">Sold Out!</option>
                 </select>
-                <textarea type="text" name="desc" value={gift.desc} placeholder="Gift URL" onChange={(e) => this.handleChange(e, key, giftee)}>
-                </textarea>
+                <input type="text" name="desc" value={gift.desc} placeholder="Gift URL" onChange={(e) => this.handleChange(e, key, giftee)} />
                 <button onClick={() => this.props.removeGift(key, giftee)}>Remove Gift</button>
             </div>
         )

@@ -107,7 +107,7 @@ class App extends React.Component {
         const gifteeObj = {
             giftee: '',
             budget: 0,
-            remaining: null,
+            remaining: 0,
             gifts: {}
         };
         //update our state
